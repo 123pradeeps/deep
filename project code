@@ -1,0 +1,192 @@
+var MongoClient = require ('mongodb').MongoClient;
+var url = "mongodb://localhost:27017";
+
+// Pradeep Singh studentid-C0730493
+MongoClient.connect(url,{ useUnifiedTopology: true } ,function(err,db){
+if(err)
+{
+throw err;
+return console.log('there is an err');
+
+}
+var myDB = db.db("CestarCollege");
+myDB.createCollection("Admission_Process" ,function(err,respond){
+if(err) throw err;
+
+console.log('collection created');
+db.close();
+});
+});
+
+var MongoClient = require ('mongodb').MongoClient;
+var url = "mongodb://localhost:27017";
+
+// Pradeep Singh studentid-C0730493
+MongoClient.connect(url,{ useUnifiedTopology: true } ,function(err,db){
+if(err)
+{
+throw err;
+return console.log('there is an err');
+
+}
+var myDB = db.db("CestarCollege");
+var addDoc = [
+   { step1: "Meet the admission requirements" },
+{ step2: "Take a campus Tour" },
+{ step3: "submit your application" },
+{ step4: "Start School" }
+
+
+];
+myDB.collection("Admission_Process").insertMany(addDoc,function(err,respond){
+if(err) throw err;
+
+console.log('documents inserted');
+db.close();
+});
+});
+
+var MongoClient = require ('mongodb').MongoClient;
+var url = "mongodb://localhost:27017";
+
+// Pradeep Singh studentid-C0730493
+MongoClient.connect(url,{ useUnifiedTopology: true } ,function(err,db){
+if(err)
+{
+throw err;
+return console.log('there is an err');
+
+}
+var myDB = db.db("CestarCollege");
+myDB.createCollection("College_Map" ,function(err,respond){
+if(err) throw err;
+
+console.log('collection created');
+db.close();
+});
+});
+
+
+var MongoClient = require ('mongodb').MongoClient;
+var url = "mongodb://localhost:27017";
+
+// Pradeep Singh studentid-C0730493
+MongoClient.connect(url,{ useUnifiedTopology: true } ,function(err,db){
+if(err)
+{
+throw err;
+return console.log('there is an err');
+
+}
+var myDB = db.db("CestarCollege");
+var addDoc = [
+   {BuildingA: "floors_2" },
+{floor_1: "rooms_101 to 127 Labs LunchRoom GameRoom Library ReceptionArea SittingArea Atrium Washrooms Pure DrinkingWater" },
+{floor_2: "rooms_128 to 230, LuchRoom, StudyRooms, InterviewRoom, TutoringCenter, Washrooms, DrinkingWater" },
+{BuldingB: "floors_5" },
+{floor1: "Tim Hortons, Elevators, Stairs"},
+    {floor2: "LuchArea, Canteen, Gamecenter, classrooms, SittinGArea, studyroom" },
+    {floor3: "Classrooms, LunchArea, washrooms" },
+{floor4: "Student service office, Director office, co_op Administrative office " },
+{floor5: "classrooms, lunchAreas" }
+];
+myDB.collection("College_Map").insertMany(addDoc,function(err,respond){
+if(err) throw err;
+
+console.log('documents inserted');
+db.close();
+});
+});
+
+var MongoClient = require ('mongodb').MongoClient;
+var url = "mongodb://localhost:27017";
+
+// Pradeep Singh studentid-C0730493
+MongoClient.connect(url,{ useUnifiedTopology: true } ,function(err,db){
+if(err)
+{
+throw err;
+return console.log('there is an err');
+
+}
+var myDB = db.db("CestarCollege");
+var myquery = {step4:"Start School"};
+var newvalues = {$set:{step4: "Start College"} };
+
+myDB.collection("Admission_Process" ).updateOne(myquery,newvalues,function(err,respond){
+if(err) throw err;
+
+console.log('document updated');
+db.close();
+});
+});
+
+var MongoClient = require ('mongodb').MongoClient;
+var url = "mongodb://localhost:27017";
+
+// Pradeep Singh studentid-C0730493
+MongoClient.connect(url,{ useUnifiedTopology: true } ,function(err,db){
+if(err)
+{
+throw err;
+return console.log('there is an err');
+
+}
+var myDB = db.db("CestarCollege");
+var myquery = {BuildingA: "floors_2" };
+
+myDB.collection("College_Map" ).deleteOne(myquery,function(err,respond){
+if(err) throw err;
+
+console.log('document deleted');
+db.close();
+});
+});
+
+var MongoClient = require ('mongodb').MongoClient;
+var url = "mongodb://localhost:27017";
+
+// Pradeep Singh studentid-C0730493
+MongoClient.connect(url,{ useUnifiedTopology: true } ,function(err,db){
+if(err)
+{
+throw err;
+return console.log('there is an err');
+
+}
+var myDB = db.db("CestarCollege");
+myDB.createCollection("studentLogin" ,function(err,respond){
+if(err) throw err;
+
+console.log('collection created');
+db.close();
+});
+});
+
+
+var MongoClient = require ('mongodb').MongoClient;
+var url = "mongodb://localhost:27017";
+
+// Pradeep Singh studentid-C0730493
+MongoClient.connect(url,{ useUnifiedTopology: true } ,function(err,db){
+if(err)
+{
+throw err;
+return console.log('there is an err');
+
+}
+var myDB = db.db("CestarCollege");
+var addDoc = [
+   {website1: "cestar moodle" },
+   {website2: "cestar database" },
+   {website3: "mylambton" },
+   {website4: "webadvisor" },
+
+];
+myDB.collection("StudentLogin").insertMany(addDoc,function(err,respond){
+if(err) throw err;
+
+console.log('documents inserted');
+db.close();
+});
+});
